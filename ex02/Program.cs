@@ -1,4 +1,14 @@
-﻿// Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+﻿/* Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
+и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+Например, задан массив:
+
+1 4 7 2
+5 9 2 3
+8 4 2 4
+
+17 -> такого числа в массиве нет
+*/
 
 int Parametr(string message)
 {
@@ -37,7 +47,16 @@ void PrintArray(double[,] array)
         Console.WriteLine();
     }
 }
+void FindNumber(double [,] array)
+{
+    int findRow=Parametr("Введите искому строку: ")-1;
+    int findColumn=Parametr("Введите искомый столбец: ")-1;
+    if(findRow<array.GetLength(0) && findColumn<array.GetLength(1))
+        Console.WriteLine(array[findRow,findColumn]);
+    else
+        Console.WriteLine("Искомого значения в массиве нет.");
+}
 
 double[,] array = CreateArray();
 PrintArray(array);
-Console.WriteLine();
+FindNumber(array);
